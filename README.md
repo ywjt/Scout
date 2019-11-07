@@ -149,11 +149,19 @@ storage_size = 1
     <tr><td>time</td><td>记录时间戳</td><td>TCP,UDP</td></tr>
     <tr><td>RAW</td><td>元数据</td><td>TCP,UDP</td></tr>
 <table>
-    
-```shell
 
+上述列出的Field可以用于策略文件的编写，要怎么实现查询想要的数据，就需要自行构造了。策略文件的filter模块始终都是以类似SQL的聚合查询语法来执行。
+
+```shell
+SELECT count({Field}) AS total , {Field}
+FROM TCP
+WHERE (time >= 1573110114 AND time <= 1573110144)
+AND ...
+GROUP BY {Field}
+HAVING count({Field}) > 100
 ```
 
+**策略文件例子**
 ```yaml
 name: "CC attack check"  #策略名称
 desc: ""  #简单描述一下
