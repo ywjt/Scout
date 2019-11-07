@@ -69,22 +69,22 @@ Scoutd help
 ```
 
 ```shell
-Usage: Scoutd
-
-Options:
-[init] -- creating and initializing a new cache partition.
-[start] -- start all service.
-[stop] -- stop main proccess, cacheserver keep running.
-[restart] -- restart main proccess, cacheserver keep running.
-[reload] -- same as restart.
-[forcestop] -- stop all service, include cacheserver and main proccess.
-[reservice] -- restart cacheserver and main proccess.
-[status] -- show main proccess run infomation.
-[dstat] -- show generating system resource statistics.
-[view] -- check block/unblock infomation.
-[watch] -- same as tailf, watching log output.
-[help] -- show this usage information.
-[version] -- show version information.
+Usage: Scoutd 
+                          
+ Options:  
+        init       creating and initializing a new cache partition. 
+        start      start all service. 
+        stop       stop main proccess, cacheserver keep running. 
+        restart    restart main proccess, cacheserver keep running. 
+        reload     same as restart. 
+        forcestop  stop all service, include cacheserver and main proccess. 
+        reservice  restart cacheserver and main proccess. 
+        status     show main proccess run infomation. 
+        dstat      show generating system resource statistics. 
+        view       check block/unblock infomation. 
+        watch      same as tailf, watching log output. 
+        help       show this usage information. 
+        version    show version information. 
 ```
 
 
