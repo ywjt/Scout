@@ -151,12 +151,12 @@ bolt: "TCP"
 # 返回：{u'total': 121, u'_id': u'115.115.115.115'}
 #
 filter:
-    timeDelta: 30     #时间区间, Seconds.
-    trustIps:         #排除src白名单,列表
+    timeDelta: 30           #时间区间, Seconds.
+    trustIps:               #排除src白名单,列表
       - 127.0.0.1
       - 10.10.0.4
       - 114.114.114.114
-    motrPort:         #过滤端口,列表
+    motrPort:               #过滤端口,列表
       - 80
       - 443
     motrProto: "TCP"        #过滤协议,TCP或UDP(暂时没有区分更细的协议名，如http、https、ssh、ftp、dns等)
@@ -169,15 +169,13 @@ filter:
 block:
     action: true     #是否封禁
     expire: 300      #封禁时间，Seconds.
-    iptables: true   #默认是用防火墙封禁,如果自定义脚本,这里设为false
-    #执行封禁命令或脚本,传参为 returnFiled 列表值
-    #如果iptables为true，command则为空，否则填了也不会生效
-    blkcmd: ""   #锁定时执行，你可以用脚本来扩展，注意执行权限
-    ubkcmd: ""   #解锁时执行，你可以用脚本来扩展，注意执行权限
+    iptables: true   #默认是用防火墙封禁,如果自定义脚本,这里设为false，如果为true，blkcmd/ubkcmd则为空，否则填了也不会生效
+    blkcmd: ""       #锁定时执行，传参为 returnFiled 列表值（你可以用脚本来扩展，注意执行权限）
+    ubkcmd: ""       #解锁时执行，传参为 returnFiled 列表值（你可以用脚本来扩展，注意执行权限）
 
 # 通知模块
 notice:
-    send: true    #是否发送
+    send: true       #是否发送
     email:    
       - 350311204@qq.com   #接收人邮箱，列表
       
