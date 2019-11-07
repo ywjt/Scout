@@ -1,11 +1,11 @@
 name: "syn flood check."
-desc: "every 30 seconds to check syn flood state."
+desc: "every 10 seconds to check syn flood state."
 ctime: "Thu Oct 24 17:48:11 CST 2019"
 
 bolt: "TCP"
 
 filter:
-    timeDelta: 30
+    timeDelta: 10
     trustIps: ""
     motrPort: ""
     motrProto: "TCP"
