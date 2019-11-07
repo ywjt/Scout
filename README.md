@@ -133,6 +133,27 @@ storage_size = 1
 
 
 ## 策略配置说明
+
+**Bolt Fields**  
+<table>
+    <tr><td>Field</td><td>Desc</td><td>Bolt</td></tr>
+    <tr><td>mac_src</td><td>来源MAC</td><td>TCP,UDP</td></tr>
+    <tr><td>mac_dst</td><td>目标MAC</td><td>TCP,UDP</td></tr>
+    <tr><td>src</td><td>来源IP</td><td>TCP,UDP</td></tr>
+    <tr><td>dst</td><td>目标IP</td><td>TCP,UDP</td></tr>
+    <tr><td>sport</td><td>来源Port</td><td>TCP,UDP</td></tr>
+    <tr><td>dport</td><td>目标Port</td><td>TCP,UDP</td></tr>
+    <tr><td>proto</td><td>访问协议</td><td>TCP,UDP</td></tr>
+    <tr><td>ttl</td><td>来源ttl值</td><td>TCP,UDP</td></tr>
+    <tr><td>flags</td><td>连接状态</td><td>TCP</td></tr>
+    <tr><td>time</td><td>记录时间戳</td><td>TCP,UDP</td></tr>
+    <tr><td>RAW</td><td>元数据</td><td>TCP,UDP</td></tr>
+<table>
+    
+```shell
+
+```
+
 ```yaml
 name: "CC attack check"  #策略名称
 desc: ""  #简单描述一下
@@ -216,7 +237,7 @@ logging output ......
 2019-11-07 16:11:43 __init__.py[line:1601] WARNING [udp.yaml] {u'total': 1806, u'_id': u'117.*.*.25'}
 ```
 
-可以发现有个策略文件都被执行了，并达到预警阀值。再查看封锁记录。
+可以发现所有策略文件都被执行了，并达到预警阀值。再查看封锁记录。
 
 ```shell
 [root@host-10-10-0-4 ~]# Scoutd view
@@ -242,7 +263,6 @@ logging output ......
 | 2019-11-07 16:32:43 | 0.67 | 0.33 |  0.16 | 0.2  |     4300     |   0.000   |   0.000   |
 +---------------------+------+------+-------+------+--------------+-----------+-----------+
 ```
-
 
 
 ## About
