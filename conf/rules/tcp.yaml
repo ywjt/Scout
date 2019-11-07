@@ -1,11 +1,11 @@
 name: "CC attack check."
-desc: "every 30 second to check src ip QPS >=100."
+desc: "every 10 second to check src ip QPS >=100."
 ctime: "Thu Oct 24 17:48:11 CST 2019"
 
 bolt: "TCP"
 
 filter:
-    timeDelta: 30
+    timeDelta: 10
     trustIps:
       - 127.0.0.1
       - 10.10.0.4
