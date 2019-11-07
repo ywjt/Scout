@@ -147,7 +147,6 @@ storage_size = 1
     <tr><td>ttl</td><td>来源ttl值</td><td>TCP,UDP</td></tr>
     <tr><td>flags</td><td>连接状态</td><td>TCP</td></tr>
     <tr><td>time</td><td>记录时间戳</td><td>TCP,UDP</td></tr>
-    <tr><td>RAW</td><td>元数据</td><td>TCP,UDP</td></tr>
 <table>
 
 上述列出的Field可以用于策略文件的编写，要怎么实现查询想要的数据，就需要自行构造了。策略文件的filter模块始终都是以类似SQL的聚合查询语法来执行。
