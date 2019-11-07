@@ -2,10 +2,8 @@ name: "syn flood check."
 desc: "every 30 seconds to check syn flood state."
 ctime: "Thu Oct 24 17:48:11 CST 2019"
 
-#数据表
 bolt: "TCP"
 
-#过滤器
 filter:
     timeDelta: 30
     trustIps: ""
@@ -17,7 +15,6 @@ filter:
     noOfCondition: "$gte"
     returnFiled: "flags"
 
-#封禁动作
 block:
     action: true
     expire: 300
@@ -25,7 +22,6 @@ block:
     blkcmd: "/opt/notice.sh %s"
     ubkcmd: ""
 
-#通知模块
 notice:
     send: true
     email:    
