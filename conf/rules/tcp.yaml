@@ -15,7 +15,7 @@ filter:
       - 443
     motrProto: "TCP"
     flags: ""
-    noOfConnections: 100
+    noOfConnections: 300
     noOfCondition: "$gte"
     returnFiled: "src"
 
