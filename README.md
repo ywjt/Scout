@@ -165,7 +165,7 @@ filter:
     noOfCondition: "$gte"   #聚合阀值条件, 如$ge\$gt\$gte\$lt\$lte
     returnFiled: "src"      #聚合的字段名, blot表里必须存在
 
-# 封禁动作
+# 执行模块
 block:
     action: true     #是否封禁
     expire: 300      #封禁时间，Seconds.
