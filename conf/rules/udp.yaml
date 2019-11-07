@@ -1,0 +1,37 @@
+name: "UDP flood check."
+desc: ""
+ctime: "Thu Oct 24 17:48:11 CST 2019"
+
+#数据表
+bolt: "UDP"
+
+#过滤器
+filter:
+    timeDelta: 30      #时间区间, Seconds.
+    trustIps:         #排除src白名单, 数组
+      - 127.0.0.1
+      - 10.10.0.4
+      - 114.114.114.114
+    motrPort:         #过滤端口
+      - 53
+    motrProto: "UDP"      #过滤协议
+    flags: ""
+    noOfConnections: 100  #阀值
+    noOfCondition: "$gte"   #阀值条件
+    returnFiled: "src"     #过滤器返回的字段名, blot表里必须存在
+
+#封禁动作
+block:
+    action: true   #是否封禁
+    expire: 300    #封禁时间
+    iptables: true #默认是用防火墙封禁,如果自定义脚本,这里设为false
+    #执行封禁命令或脚本,传参为 returnFiled 列表值
+    #如果iptables为true，command则为空，否则填了也不会生效
+    blkcmd: ""
+    ubkcmd: ""
+
+#通知模块
+notice:
+    send: true
+    email:    
+      - 350311204@qq.com
