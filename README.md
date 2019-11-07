@@ -185,6 +185,65 @@ notice:
 ```
 
 
+## 模拟测试
+下面使用hping3 工具发起攻击测试，工具自行安装。hping3是一个很全面的网络压测工具。  
+
+**发起80端口syn半连接请求**
+```shell
+hping3 -I eth0 -S 目标IP -p 80 --faster
+```
+
+**发起53端口udp flood**
+```shell
+hping3 -2 -I eth0 -S 目标IP -p 53 --faster
+```
+
+**监听Scout输出**
+```shell
+[root@host-10-10-0-4 ~]# Scoutd watch
+logging output ......
+2019-11-07 16:11:27 __init__.py[line:1601] WARNING [LOCK] syn has been blocked, It has 606 packets transmitted to server.
+2019-11-07 16:11:28 __init__.py[line:1585] ERROR [MAIL] Send mail failed to: [Errno -2] Name or service not known
+2019-11-07 16:11:29 __init__.py[line:1601] WARNING [syn.yaml] {u'total': 606, u'_id': u'syn', 'block': 1}
+2019-11-07 16:11:30 __init__.py[line:1601] WARNING [LOCK] 117.*.*.22 has been blocked, It has 861 packets transmitted to server.
+2019-11-07 16:11:32 __init__.py[line:1585] ERROR [MAIL] Send mail failed to: [Errno -2] Name or service not known
+2019-11-07 16:11:32 __init__.py[line:1601] WARNING [tcp.yaml] {u'total': 861, u'_id': u'117.*.*.22'}
+2019-11-07 16:11:36 __init__.py[line:1601] WARNING [LOCK] 117.*.*.25 has been blocked, It has 904 packets transmitted to server.
+2019-11-07 16:11:38 __init__.py[line:1585] ERROR [MAIL] Send mail failed to: [Errno -2] Name or service not known
+2019-11-07 16:11:39 __init__.py[line:1601] WARNING [udp.yaml] {u'total': 904, u'_id': u'117.*.*.25'}
+2019-11-07 16:11:39 __init__.py[line:1601] WARNING [syn.yaml] {u'total': 1765, u'_id': u'syn', 'block': 1}
+2019-11-07 16:11:40 __init__.py[line:1601] WARNING [tcp.yaml] {u'total': 1817, u'_id': u'117.*.*.22'}
+2019-11-07 16:11:43 __init__.py[line:1601] WARNING [udp.yaml] {u'total': 1806, u'_id': u'117.*.*.25'}
+```
+
+可以发现有个策略文件都被执行了，并达到预警阀值。再查看封锁记录。
+
+```shell
+[root@host-10-10-0-4 ~]# Scoutd view
++------------+----------+-------+------------------------------------------------------------+---------------------+
+|    _ID     | ConfName | Total |                          Command                           |         Time        |
++------------+----------+-------+------------------------------------------------------------+---------------------+
+|      syn   |   syn    |  371  | /opt/notice.sh {u'total': 371, u'_id': u'syn', 'block': 1} | 2019-11-07 16:12:06 |
+| 117.*.*.22 |   tcp    |  371  |      /sbin/iptables -I INPUT -s 117.*.*.22 -j DROP         | 2019-11-07 16:12:06 |
+| 117.*.*.25 |   udp    |  604  |      /sbin/iptables -I INPUT -s 117.*.*.25 -j DROP         | 2019-11-07 16:12:09 |
++------------+----------+-------+------------------------------------------------------------+---------------------+
+```
+
+目前Scout的性能还不算很高，如果有大量持续的攻击，CPU占用率稍有些高的，一旦攻击停止占用率就会马上降下来。
+
+```shell
+[root@host-10-10-0-4 ~]# Scoutd dstat 
++---------------------+------+------+-------+------+--------------+-----------+-----------+
+|         Time        | 1min | 5min | 15min | %CPU | MemFree(MiB) | Recv(MiB) | Send(MiB) |
++---------------------+------+------+-------+------+--------------+-----------+-----------+
+| 2019-11-07 16:29:33 | 0.00 | 0.04 |  0.05 | 0.5  |     4307     |   0.002   |   0.002   |
+| 2019-11-07 16:30:36 | 0.00 | 0.03 |  0.05 | 0.5  |     4258     |   0.000   |   0.000   |
+| 2019-11-07 16:31:40 | 0.77 | 0.21 |  0.11 | 43.9 |     4291     |   3.754   |   0.001   |
+| 2019-11-07 16:32:43 | 0.67 | 0.33 |  0.16 | 0.2  |     4300     |   0.000   |   0.000   |
++---------------------+------+------+-------+------+--------------+-----------+-----------+
+```
+
+
 
 ## About
 
