@@ -193,7 +193,7 @@ class CacheServerd(Dshield):
 										--logappend \
 										--fork \
 										--quiet' % (__storagePort, __dbPath, __storageSize, __logPath)
-			self.__CacheStopCommand = './cacheServer --dbpath=%s --shutdown' % __dbPath
+			self.__CacheStopCommand = 'cacheServer --dbpath=%s --shutdown' % __dbPath
 		else:
 			Loger().CRITICAL("'storage_type' value not match! options: 'Memory' or 'Disk'")
 			raise
