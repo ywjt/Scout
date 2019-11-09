@@ -24,7 +24,12 @@ Scout是一个攻击检测预警工具，它在受到如CC、压测工具、syn 
 
 1）解压到指定目录  
 ```shell
+Centos6\7:  
 wget https://github.com/ywjt/Scout/releases/download/v0.1.0-alpha/Scout_v0.1.0-alpha.tar.gz  
+
+Ubuntu14.04\16.04:  
+https://github.com/ywjt/Scout/releases/download/v0.1.0-alpha_ubuntu/Scout_v0.1.0-alpha_ubuntu.tar.gz
+
 tar zxvf Scout_v0.1.0-alpha.tar.gz -C /usr/local/  
 ```
 
