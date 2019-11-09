@@ -44,7 +44,7 @@ ln -s /usr/local/scout/bin/* /usr/local/bin/
 ln -s /usr/lib64/libsasl2.so.3.0.0 /usr/lib64/libsasl2.so.2  
 ```
 
-3）初始化缓存目录  
+3）初始化缓存目录   
 ```shell
 Scoutd init  
 ```
