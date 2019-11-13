@@ -8,7 +8,8 @@ Scout是一个攻击检测预警工具，它在受到如CC、压测工具、syn 
 
 ## 运行环境：
 * 支持 Centos6、Centos7
-* 支持 Ubuntu14.04、Ubuntu16.04 (新增)
+* 支持 Ubuntu14.04、Ubuntu16.04 <font color='red'>(新增)</font>
+* 添加 grafana 展示插件 <font color='red'>(新增)</font>
 * 使用root特权运行
 * 注意下载对应的版本 
 
