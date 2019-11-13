@@ -8,11 +8,12 @@ Scout是一个攻击检测预警工具，它在受到如CC、压测工具、syn 
 
 ## 运行环境：
 * 支持 Centos6、Centos7
-* 支持 Ubuntu14.04、Ubuntu16.04 <font color='red'>(新增)</font>
-* 添加 grafana 展示插件 <font color='red'>(新增)</font>
+* 支持 Ubuntu14.04、Ubuntu16.04 (新增)
+* 添加 grafana 展示插件 (新增)
 * 使用root特权运行
 * 注意下载对应的版本 
 
+<img src='https://github.com/ywjt/Scout/blob/master/plugin/web_demo.png'>
 
 ## 配置文件有两种：  
 * 全局启动配置 scoutd.conf  
@@ -219,8 +220,12 @@ notice:
       - 350311204@qq.com   #接收人邮箱，列表
       
 ```
-
-
+   
+   
+## 安装grafana插件（可选）  
+参考文档： https://github.com/ywjt/Scout/tree/master/plugin   
+   
+   
 ## 模拟测试
 下面使用hping3 工具发起攻击测试，工具自行安装。hping3是一个很全面的网络压测工具。  
 
