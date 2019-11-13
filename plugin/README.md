@@ -12,11 +12,12 @@
 下载直接运行 Scout_grafana_server 即可，建议放到 Scout目录里。
 
 ```shell
+wget https://github.com/ywjt/Scout/releases/download/v0.1.0-alpha_plugin/Scout_plugin_for_grfana_server.tar.gz
 mkdir /usr/local/scout/plugin
-cp Scout_grafana_server /usr/local/scout/plugin/
+tar zxvf Scout_plugin_for_grfana_server.tar.gz -C /usr/local/scout/plugin/
 ln -s /usr/local/scout/plugin/Scout_grafana_server /usr/local/bin/
 
-/usr/local/bin/Scout_grafana_server &
+nohup /usr/local/bin/Scout_grafana_server > /var/log/scout/scout_pulgin.log &
 ```
 
 
