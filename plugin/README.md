@@ -62,6 +62,9 @@ sudo service grafana-server restart
 <img src='https://github.com/ywjt/Scout/blob/master/plugin/doc/7048349F-3AE4-474E-A0F7-069699661B48.png'> 
 
 4、导入JSON模板  
+```shell
+Scout_plugin_for_grafana_server.json
+```
 <img src='https://github.com/ywjt/Scout/blob/master/plugin/doc/6563C7A9-A76A-4851-BF53-91D6CF08CE4F.png'> 
 
 5、最终效果  
