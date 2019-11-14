@@ -52,7 +52,7 @@ sudo grafana-cli plugins install grafana-simple-json-datasource
 sudo service grafana-server restart
 ```
 
-* 后台配置 simple-json
+* 后台配置 simple-json  
 1、添加datasource  
 <img src='https://github.com/ywjt/Scout/blob/master/plugin/doc/6F7268C1-9277-4516-B5D7-2D95477EF22C.png'>  
 
