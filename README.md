@@ -22,7 +22,7 @@ Scout是一个攻击检测预警工具，它在受到如CC、压测工具、syn 
 
 
 ## 安装Scout
-**PS：上于github上传最大限制25M，在上面bin目录中缺少cacheServer可执行文件，直接clone上面代码没法运行。**
+**PS：由于github上传最大限制25M，在上面bin目录中缺少cacheServer可执行文件，直接clone上面代码没法运行。**
 
 1）解压到指定目录  
 ```shell
