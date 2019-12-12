@@ -570,8 +570,8 @@
       "pageSize": 50,
       "showHeader": true,
       "sort": {
-        "col": 7,
-        "desc": false
+        "col": 1,
+        "desc": true
       },
       "styles": [
         {
@@ -580,6 +580,26 @@
           "link": false,
           "pattern": "time",
           "type": "date"
+        },
+        {
+          "alias": "",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": true,
+          "linkTargetBlank": true,
+          "linkTooltip": "IP查询",
+          "linkUrl": "http://freeapi.ipip.net/${__cell:src}",
+          "mappingType": 1,
+          "pattern": "src",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
         }
       ],
       "targets": [
@@ -717,6 +737,25 @@
           "link": false,
           "pattern": "time",
           "type": "date"
+        },
+        {
+          "alias": "",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": true,
+          "linkTooltip": "IP查询",
+          "linkUrl": "http://freeapi.ipip.net/${__cell:src}",
+          "mappingType": 1,
+          "pattern": "src",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
         }
       ],
       "targets": [
@@ -855,5 +894,5 @@
   "timezone": "",
   "title": "Scout Plugin",
   "uid": "ofIJAo1Zz",
-  "version": 87
+  "version": 92
 }
