@@ -57,13 +57,13 @@ sudo service grafana-server restart
 <img src='https://github.com/ywjt/Scout/blob/master/plugin/doc/6F7268C1-9277-4516-B5D7-2D95477EF22C.png'>  
 
 2、选择JSON引擎  
-<img src='https://github.com/ywjt/Scout/blob/master/plugin/doc/20AEAE30-A1D0-4D24-9162-736EC6DB76ED.png'>  
+<img src='https://github.com/ywjt/Scout/blob/master/plugin/doc/7A8FC79A-1133-423B-94DA-3C686A035778.png'>  
 
 3、配置JSON引擎接口  
 ```shell
 这里只需要把URL填入 http://localhost:6667 即可。插件仅允许本地通信，6667端口为固定不可改。
 ```   
-<img src='https://github.com/ywjt/Scout/blob/master/plugin/doc/7048349F-3AE4-474E-A0F7-069699661B48.png'> 
+<img src='https://github.com/ywjt/Scout/blob/master/plugin/doc/EEAF5357-D03F-41F8-B574-CEF4ECC570F2.png'> 
 
 4、导入JSON模板  
 ```shell
