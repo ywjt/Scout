@@ -8,7 +8,8 @@ Scout是一个攻击检测工具，它在受到如CC、压测工具、syn flood�
 
 ## 架构原理
 <img src='https://github.com/ywjt/Scout/blob/master/Scout_ObServer.png'>  
-**PS：目前仅实现Scout客户端部份。**
+**PS：目前仅实现Scout客户端部份。**  
+
 
 ## 运行环境：
 * 支持 Centos6、Centos7
