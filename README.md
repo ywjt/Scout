@@ -25,14 +25,16 @@ Scout是一个攻击检测工具，它在受到如CC、压测工具、syn flood�
 **PS：由于github上传最大限制25M，在上面bin目录中缺少cacheServer可执行文件，直接clone上面代码没法运行。**
 
 1）解压到指定目录  
+* Centos6\7:  
 ```shell
-Centos6\7:  
 wget https://github.com/ywjt/Scout/releases/download/v0.1.0-alpha/Scout_v0.1.0-alpha.tar.gz  
-
-Ubuntu14.04\16.04:  
-https://github.com/ywjt/Scout/releases/download/v0.1.0-alpha_ubuntu/Scout_v0.1.0-alpha_ubuntu.tar.gz
-
 tar zxvf Scout_v0.1.0-alpha.tar.gz -C /usr/local/  
+```
+
+* Ubuntu14.04\16.04:  
+```shell
+https://github.com/ywjt/Scout/releases/download/v0.1.0-alpha_ubuntu/Scout_v0.1.0-alpha_ubuntu.tar.gz   
+tar zxvf Scout_v0.1.0-alpha_ubuntu.tar.gz -C /usr/local/  
 ```
 
 2）设置软连接
@@ -59,6 +61,8 @@ Scoutd init
 Scoutd start  
 Scoutd version  
 ```
+**PS：确保你的系统已安装iptables 防火墙，本具默认使用iptables，否则无法实现封禁操作。当然你也可以在策略文件中关闭它。如果是Ubuntu请额外安装支持iptables，然后把UFW关闭。**
+
 
 5）可以查看运行状态  
 ```shell
