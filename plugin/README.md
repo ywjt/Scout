@@ -14,10 +14,10 @@
 ```shell
 wget https://github.com/ywjt/Scout/releases/download/v0.1.0-alpha_plugin/Scout_plugin_for_grfana_server.tar.gz
 mkdir /usr/local/scout/plugin
-tar zxvf Scout_plugin_for_grfana_server.tar.gz -C /usr/local/scout/plugin/
-ln -s /usr/local/scout/plugin/Scout_grafana_server /usr/local/bin/
+tar zxvf Scout_plugin_for_grfana_server.tar.gz -C /usr/local/scout/
+ln -s /usr/local/scout/plugin/Scout_plugin /usr/local/bin/
 
-nohup /usr/local/bin/Scout_grafana_server > /var/log/scout/scout_pulgin.log &
+nohup /usr/local/bin/Scout_plugin > /var/log/scout/scout_pulgin.log &
 ```
 
 
