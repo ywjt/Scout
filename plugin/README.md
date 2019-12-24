@@ -58,7 +58,7 @@ sudo service grafana-server restart
 <img src='https://github.com/ywjt/Scout/blob/master/plugin/doc/6F7268C1-9277-4516-B5D7-2D95477EF22C.png'>  
 
 2、选择JSON引擎  
-<img src='https://github.com/ywjt/Scout/blob/master/plugin/doc/7A8FC79A-1133-423B-94DA-3C686A035778.png'>  
+<img src='https://github.com/ywjt/Scout/blob/master/plugin/doc/FD2AF693-B35A-4B67-A07C-6E5B29FC666A.png'>  
 
 3、配置JSON引擎接口  
 ```shell
