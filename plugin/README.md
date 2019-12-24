@@ -49,7 +49,7 @@ service grafana-server start
 ## 导入模板
 * 安装 grafana-simple-json-datasource 插件
 ```shell
-sudo grafana-cli plugins install grafana-simple-json-datasource
+sudo grafana-cli plugins install simpod-json-datasource
 sudo service grafana-server restart
 ```
 
