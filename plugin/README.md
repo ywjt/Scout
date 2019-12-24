@@ -31,7 +31,8 @@ sudo dpkg -i grafana_6.4.4_amd64.deb
 * Redhat & Centos  
 ```shell
 wget https://dl.grafana.com/oss/release/grafana-6.4.4-1.x86_64.rpm
-sudo yum localinstall grafana-6.4.4-1.x86_64.rpm
+sudo yum install initscripts urw-fonts
+sudo rpm -Uvh grafana-6.4.4-1.x86_64.rpm
 ```
 
 * 启动 grafana server
