@@ -9,7 +9,7 @@
    
   
   
-下载直接运行 Scout_grafana_server 即可，建议放到 Scout目录里。
+下载直接运行 Scout_plugin 即可，建议放到 Scout目录里。
 
 ```shell
 wget https://github.com/ywjt/Scout/releases/download/v0.1.0-alpha_plugin/Scout_plugin_for_grfana_server.tar.gz
