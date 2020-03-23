@@ -109,16 +109,6 @@ class Pcapy(ScoutBase):
                     6 : TCP protocol
                     8 : IP protocol
                    17 : UDP protocol
-            
-            if packet.p==6: 
-                #self.recv_tcp(packet, stdout)
-                self.PQ.createQueue(self.recv_tcp, (packet, stdout))
-            elif packet.p==17: 
-                self.PQ.createQueue(self.recv_udp, (packet, stdout))
-                #self.recv_udp(packet, stdout)
-            else:
-                Loger().WARNING('Protocol type not supported %s' % eth.data._class_._name_)
-                pass
             """
             try:
                 # 将特征字符串换为对象, 这里就不用if..else 了
