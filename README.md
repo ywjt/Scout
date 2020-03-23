@@ -1,10 +1,9 @@
 # Scout v0.3.0-beta
 
 Scout是一个攻击检测工具，它在受到如CC、压测工具、syn flood、udp flood等拒绝服务攻击时，能进实时检测和告警。同时支持配置防火墙的封锁，也可以通过调用脚本做一些其它的处理。本工具实际上在原来Dshield工具上重构而来的，但实现的方式与原来完全不一样。本次方案是以调用libcap数据包捕获的开源函数库来收集，经过适配器的所有数据，然后将数据进行实时分析。
-
-本具集成了一个用于缓存数据的软件（目前是mongodb），你不用额外去安装它，工具里已经打包集成了，直接通过工具命令来启动就行。 
-
+```
 按照原来的架构规划，Scout是一个分布式的预警平台，由于时间精力原因，目前只做了一个单机试用版本。 后面有精力会重写成分布架构，独立开发一个中央管理后台，来管理所有在主机上跑的Scout客户端。可以通过中央后台分发策略文件，支持线上配置、线上查询分析数据、控制Scout客户端、集中告警等。
+```
 
 ## 架构原理
 <img src='https://github.com/ywjt/Scout/blob/master/Scout_ObServer.png'> 
@@ -13,33 +12,37 @@ Scout是一个攻击检测工具，它在受到如CC、压测工具、syn flood�
 
 
 ## 运行环境：
-* 支持 Centos6.5、Centos7.x
-* 支持 Ubuntu14.04、Ubuntu16.04 (新增)
-* 添加 grafana 展示插件 (新增)
+* 支持 Centos6.x、Centos7.x
+* 支持 Ubuntu14.04、Ubuntu16.04
 * 使用root特权运行
 * 注意下载对应的版本 
 
 <img src='https://github.com/ywjt/Scout/blob/master/doc/2384F272-01BD-4081-BD0C-2993592A5C94.png'>
 
 ## 配置文件有两种：  
-* 全局启动配置 scoutd.conf  
-* 预警策略配置（支持yaml、json格式），语法不能有错，暂时没有做过多的语法校验。已内置了3个策略模板。   
-* 路径：/etc/scout.d/
+
+* 启动配置 /etc/scout.d/scoutd.conf  
+* 策略配置（支持yaml、json格式），语法不能有错，暂时没有做过多的语法校验。/etc/scout.d/rules/
 
 
 ## 安装Scout
-**PS：由于github上传最大限制25M，在上面bin目录中缺少cacheServer可执行文件，直接clone上面代码没法运行。**
 
 1）解压到指定目录  
-* Centos6\7:  
+* Centos6.x:  
 ```shell
-wget https://github.com/ywjt/Scout/releases/download/v0.1.0-alpha/Scout_v0.1.0-alpha.tar.gz  
+wget https://github.com/ywjt/Scout/releases/download/v0.3.0-beta-Centos6/scout_v0.3.0-beta-Centos6.tar.gz  
+tar zxvf Scout_v0.1.0-alpha.tar.gz -C /usr/local/  
+```
+
+* Centos7.x:  
+```shell
+wget https://github.com/ywjt/Scout/releases/download/v0.3.0-beta-Centos7/scout_v0.3.0-beta-Centos7.tar.gz  
 tar zxvf Scout_v0.1.0-alpha.tar.gz -C /usr/local/  
 ```
 
 * Ubuntu14.04\16.04:  
 ```shell
-https://github.com/ywjt/Scout/releases/download/v0.1.0-alpha_ubuntu/Scout_v0.1.0-alpha_ubuntu.tar.gz   
+wget https://github.com/ywjt/Scout/releases/download/v0.3.0-beta-Ubuntu/scout_v0.3.0-beta-Ubuntu.tar.gz   
 tar zxvf Scout_v0.1.0-alpha_ubuntu.tar.gz -C /usr/local/  
 ```
 
