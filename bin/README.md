@@ -1,5 +1,5 @@
 
-# Scout v0.3.0-beta
+# cacheServer for scout v0.3.0-beta
 
 scout集成了一个用于缓存数据的软件（cacheServer），cacheServer为可执行文件，如果你想直接代码运行scout，需要先安装cacheServer。
 
