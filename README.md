@@ -308,26 +308,26 @@ hping3 -2 -I eth0 -S 目标IP -p 53 --faster
 
 **监听Scout输出**
 ```shell
-[root@host-10-10-0-4 ~]# Scoutd watch
+[root@~]# Scoutd watch
 logging output ......
-2019-11-07 16:11:27 __init__.py[line:1601] WARNING [LOCK] syn has been blocked, It has 606 packets transmitted to server.
-2019-11-07 16:11:28 __init__.py[line:1585] ERROR [MAIL] Send mail failed to: [Errno -2] Name or service not known
-2019-11-07 16:11:29 __init__.py[line:1601] WARNING [syn.yaml] {u'total': 606, u'_id': u'syn', 'block': 1}
-2019-11-07 16:11:30 __init__.py[line:1601] WARNING [LOCK] 117.*.*.22 has been blocked, It has 861 packets transmitted to server.
-2019-11-07 16:11:32 __init__.py[line:1585] ERROR [MAIL] Send mail failed to: [Errno -2] Name or service not known
-2019-11-07 16:11:32 __init__.py[line:1601] WARNING [tcp.yaml] {u'total': 861, u'_id': u'117.*.*.22'}
-2019-11-07 16:11:36 __init__.py[line:1601] WARNING [LOCK] 117.*.*.25 has been blocked, It has 904 packets transmitted to server.
-2019-11-07 16:11:38 __init__.py[line:1585] ERROR [MAIL] Send mail failed to: [Errno -2] Name or service not known
-2019-11-07 16:11:39 __init__.py[line:1601] WARNING [udp.yaml] {u'total': 904, u'_id': u'117.*.*.25'}
-2019-11-07 16:11:39 __init__.py[line:1601] WARNING [syn.yaml] {u'total': 1765, u'_id': u'syn', 'block': 1}
-2019-11-07 16:11:40 __init__.py[line:1601] WARNING [tcp.yaml] {u'total': 1817, u'_id': u'117.*.*.22'}
-2019-11-07 16:11:43 __init__.py[line:1601] WARNING [udp.yaml] {u'total': 1806, u'_id': u'117.*.*.25'}
+2019-11-07 16:11:27 WARNING [LOCK] syn has been blocked, It has 606 packets transmitted to server.
+2019-11-07 16:11:28 ERROR [MAIL] Send mail failed to: [Errno -2] Name or service not known
+2019-11-07 16:11:29 WARNING [syn.yaml] {u'total': 606, u'_id': u'syn', 'block': 1}
+2019-11-07 16:11:30 WARNING [LOCK] 117.*.*.22 has been blocked, It has 861 packets transmitted to server.
+2019-11-07 16:11:32 ERROR [MAIL] Send mail failed to: [Errno -2] Name or service not known
+2019-11-07 16:11:32 WARNING [tcp.yaml] {u'total': 861, u'_id': u'117.*.*.22'}
+2019-11-07 16:11:36 WARNING [LOCK] 117.*.*.25 has been blocked, It has 904 packets transmitted to server.
+2019-11-07 16:11:38 ERROR [MAIL] Send mail failed to: [Errno -2] Name or service not known
+2019-11-07 16:11:39 WARNING [udp.yaml] {u'total': 904, u'_id': u'117.*.*.25'}
+2019-11-07 16:11:39 WARNING [syn.yaml] {u'total': 1765, u'_id': u'syn', 'block': 1}
+2019-11-07 16:11:40 WARNING [tcp.yaml] {u'total': 1817, u'_id': u'117.*.*.22'}
+2019-11-07 16:11:43 WARNING [udp.yaml] {u'total': 1806, u'_id': u'117.*.*.25'}
 ```
 
 可以发现所有策略文件都被执行了，并达到预警阀值。再查看封锁记录。
 
 ```shell
-[root@host-10-10-0-4 ~]# Scoutd view
+[root@~]# Scoutd view
 +------------+----------+-------+------------------------------------------------------------+---------------------+
 |    _ID     | ConfName | Total |                          Command                           |         Time        |
 +------------+----------+-------+------------------------------------------------------------+---------------------+
@@ -354,7 +354,7 @@ logging output ......
 
 ## About
 
-**Original Author:** YWJT http://www.ywjt.org/ (Copyright (C) 2016)  
+**Original Author:** YWJT http://www.ywjt.org/ (Copyright (C) 2020)  
 **Maintainer:** ZhiQiang Koo <350311204@qq.com>  
 <img src="http://www.ywjt.org/ywjtshare.png" width="200px">  
 
