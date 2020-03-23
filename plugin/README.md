@@ -1,25 +1,7 @@
 
-# Scout Plugin for grafana server
+# Scout web for grafana server
 
-这是一个简单的JSON数据源服务器，用于grafana的展示。     
-只需要导入模板即可，前提是已安装了grafana server。    
-
-关于grafana SimpleJSON datasource   
-可以关注：https://github.com/grafana/simple-json-datasource   
-   
-  
-  
-下载直接运行 Scout_plugin 即可，建议放到 Scout目录里。
-
-```shell
-wget https://github.com/ywjt/Scout/releases/download/v0.1.0-alpha_plugin/Scout_plugin_for_grfana_server.tar.gz
-mkdir /usr/local/scout/plugin
-tar zxvf Scout_plugin_for_grfana_server.tar.gz -C /usr/local/scout/
-ln -s /usr/local/scout/plugin/Scout_plugin /usr/local/bin/
-
-nohup /usr/local/bin/Scout_plugin > /var/log/scout/scout_pulgin.log &
-```
-
+scout_v0.3.0-beta 已集成了用于grafana展示的api接口，你只需要安装 grafana server 再导入json模板即可。
 
 ## 安装 grafana server 6.4.4  
 * Ubuntu & Debian  
