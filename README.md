@@ -5,11 +5,6 @@ Scout是一个攻击检测工具，它在受到如CC、压测工具、syn flood�
 按照原来的架构规划，Scout是一个分布式的预警平台，由于时间精力原因，目前只做了一个单机试用版本。 后面有精力会重写成分布架构，独立开发一个中央管理后台，来管理所有在主机上跑的Scout客户端。可以通过中央后台分发策略文件，支持线上配置、线上查询分析数据、控制Scout客户端、集中告警等。
 ```
 
-## 架构原理
-<img src='https://github.com/ywjt/Scout/blob/master/Scout_ObServer.png'> 
-
-**PS：目前仅实现Scout客户端部份。**   
-
 
 ## 运行环境：
 * 支持 Centos6.x、Centos7.x
