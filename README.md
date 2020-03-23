@@ -311,13 +311,13 @@ hping3 -2 -I eth0 -S 目标IP -p 53 --faster
 [root@~]# Scoutd watch
 logging output ......
 2019-11-07 16:11:27 WARNING [LOCK] syn has been blocked, It has 606 packets transmitted to server.
-2019-11-07 16:11:28 ERROR [MAIL] Send mail failed to: [Errno -2] Name or service not known
+2019-11-07 16:11:28 ERROR   [MAIL] Send mail failed to: [Errno -2] Name or service not known
 2019-11-07 16:11:29 WARNING [syn.yaml] {u'total': 606, u'_id': u'syn', 'block': 1}
 2019-11-07 16:11:30 WARNING [LOCK] 117.*.*.22 has been blocked, It has 861 packets transmitted to server.
-2019-11-07 16:11:32 ERROR [MAIL] Send mail failed to: [Errno -2] Name or service not known
+2019-11-07 16:11:32 ERROR   [MAIL] Send mail failed to: [Errno -2] Name or service not known
 2019-11-07 16:11:32 WARNING [tcp.yaml] {u'total': 861, u'_id': u'117.*.*.22'}
 2019-11-07 16:11:36 WARNING [LOCK] 117.*.*.25 has been blocked, It has 904 packets transmitted to server.
-2019-11-07 16:11:38 ERROR [MAIL] Send mail failed to: [Errno -2] Name or service not known
+2019-11-07 16:11:38 ERROR   [MAIL] Send mail failed to: [Errno -2] Name or service not known
 2019-11-07 16:11:39 WARNING [udp.yaml] {u'total': 904, u'_id': u'117.*.*.25'}
 2019-11-07 16:11:39 WARNING [syn.yaml] {u'total': 1765, u'_id': u'syn', 'block': 1}
 2019-11-07 16:11:40 WARNING [tcp.yaml] {u'total': 1817, u'_id': u'117.*.*.22'}
