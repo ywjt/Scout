@@ -12,7 +12,8 @@ Scout是一个攻击检测工具，它在受到如CC、压测工具、syn flood�
 * 集成用于grafana图形显示的http接口
 
 ## 部署架构
-<img src='https://raw.githubusercontent.com/ywjt/Scout/master/doc/7CE72B62-09B9-427C-9CD3-9E09CCACAF8A.png'>
+<img src='https://raw.githubusercontent.com/ywjt/Scout/master/doc/7CE72B62-09B9-427C-9CD3-9E09CCACAF8A.png'> 
+PS: 不建议scout工具与后端服务（源机）部署在同一台机上，因为即便使用了iptables禁用攻击者IP，但攻击持续产生的数据包仍然流过本机网卡，会导致源机CPU负载飙升。最优的方式是把scout独立成节点，部署到源机上层的负载均衡集群上，在上层进行截拦。
 
 ## 运行环境：
 * 支持 Centos6.x、Centos7.x
