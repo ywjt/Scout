@@ -5,6 +5,10 @@ Scout是一个攻击检测工具，它在受到如CC、压测工具、syn flood�
 按照原来的架构规划，Scout是一个分布式的预警平台，由于时间精力原因，目前只做了一个单机试用版本。 后面有精力会重写成分布架构，独立开发一个中央管理后台，来管理所有在主机上跑的Scout客户端。可以通过中央后台分发策略文件，支持线上配置、线上查询分析数据、控制Scout客户端、集中告警等。
 ```
 
+## 版本更新 2020-03-13
+* 修复在大并发攻击下抓包线程自动挂掉的问题
+* 增加独立抓包进程，并发采样速度提升50倍
+* 集成用于grafana图形显示的http接口
 
 ## 运行环境：
 * 支持 Centos6.x、Centos7.x
@@ -58,7 +62,13 @@ Scoutd init
 ```
 
 这一步在新安装时要做，还有如果全局配置文件里改变了storage_type缓存类型，也需要重新初始化。重新初始化会清除缓存数据。  
-修改/etc/scout.d/scoutd.conf 的 listen_ip ="",然后可以启动了。
+修改/etc/scout.d/scoutd.conf 中：
+```
+listen_ip =""
+motr_interface =""
+motr_port = ""
+```
+然后可以启动了。
 
 4）启动Scout  
 ```shell
@@ -112,8 +122,8 @@ log_level = "INFO"
 #本机监听,填写本机所有通信IP,不要填0.0.0.0
 listen_ip = "10.10.0.4,114.114.114.114"
 
-# 信任IP列表,支持CIRD格式
-trust_ip = "10.10.10.0/24,172.16.0.0/16"
+# 信任IP列表,支持CIDR格式
+trust_ip = "172.16.0.0/16"
 
 # 监听适配器,如果是多网口,请填写'any'，否则填'eth0|eth1|em0|em1...'
 motr_interface = "eth0"
@@ -286,7 +296,8 @@ Scout_plugin_for_grafana_server.json
 <img src='https://github.com/ywjt/Scout/blob/master/doc/6563C7A9-A76A-4851-BF53-91D6CF08CE4F.png'> 
 
 
-
+ 
+  
    
 ## 模拟测试
 下面使用hping3 工具发起攻击测试，工具自行安装。hping3是一个很全面的网络压测工具。  
