@@ -7,7 +7,8 @@ Scout是一个攻击检测工具，能有效识别如CC、压测工具发起的�
 * 增加独立采样进程，并发采样速度提升50倍
 * 优化采样的系统效率，降低CPU使用率
 * 集成用于grafana图形显示的http接口
-
+ 
+  
 ### 部署架构
 <img src='https://raw.githubusercontent.com/ywjt/Scout/master/doc/7CE72B62-09B9-427C-9CD3-9E09CCACAF8A.png'> 
 PS: 不建议Scout与后端服务（源机）部署在同一台机上，最优的方式是把Scout独立成节点，部署到源机上层的负载均衡集群上，在上层进行截拦。
