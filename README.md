@@ -61,7 +61,7 @@ ln -s /usr/lib64/libsasl2.so.3.0.0 /usr/lib64/libsasl2.so.2
 
 3）初始化缓存目录   
 ```shell
-Scoutd init  
+scoutd init  
 ```
 
 这一步在新安装时要做，还有如果全局配置文件里改变了storage_type缓存类型，也需要重新初始化。重新初始化会清除缓存数据。  
@@ -75,26 +75,26 @@ motr_port = ""
 
 4）启动Scout  
 ```shell
-Scoutd start  
-Scoutd version  
+scoutd start  
+scoutd version  
 ```
 **PS：确保你的系统已安装iptables 防火墙，本具默认使用iptables，否则无法实现封禁操作。当然你也可以在策略文件中关闭它。如果是Ubuntu请额外安装支持iptables，然后把UFW关闭。**
 
 
 5）可以查看运行状态  
 ```shell
-Scoutd status  
-Scoutd dstat 
+scoutd status  
+scoutd dstat 
 ```
 
 6）可以监听日志输出  
 ```shell
-Scoutd watch  
+scoutd watch  
 ```
 
 7）其它使用帮助  
 ```shell
-Scoutd help  
+scoutd help  
 ```
 
 ```shell
@@ -323,7 +323,7 @@ hping3 -2 -I eth0 -S 目标IP -p 53 --faster
 
 **监听Scout输出**
 ```shell
-[root@~]# Scoutd watch
+[root@~]# scoutd watch
 logging output ......
 2019-11-07 16:11:27 WARNING [LOCK] syn has been blocked, It has 606 packets transmitted to server.
 2019-11-07 16:11:28 ERROR   [MAIL] Send mail failed to: [Errno -2] Name or service not known
@@ -342,7 +342,7 @@ logging output ......
 可以发现所有策略文件都被执行了，并达到预警阀值。再查看封锁记录。
 
 ```shell
-[root@~]# Scoutd view
+[root@~]# scoutd view
 +------------+----------+-------+------------------------------------------------------------+---------------------+
 |    _ID     | ConfName | Total |                          Command                           |         Time        |
 +------------+----------+-------+------------------------------------------------------------+---------------------+
@@ -353,7 +353,7 @@ logging output ......
 ```
 
 ```shell
-[root@~]# Scoutd dstat 
+[root@~]# scoutd dstat 
 +---------------------+------+------+-------+------+--------------+-----------+-----------+
 |         Time        | 1min | 5min | 15min | %CPU | MemFree(MiB) | Recv(MiB) | Send(MiB) |
 +---------------------+------+------+-------+------+--------------+-----------+-----------+
