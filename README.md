@@ -2,17 +2,17 @@
 
 Scout是一个攻击检测工具，能有效识别如CC、压测工具发起的拒绝服务攻击，并能实时告警。它支持配置防火墙的封锁，也可以通过调用脚本做一些其它的处理。工具使用了libcap底层数据包捕获函数库，经过适配器的所有数据，被采样到缓存服务中，然后对数据进行实时的分析。支持策略过滤配置，灵活、快速。适合用于小规模WEB集群，最优的方式是架设于上层的负载均衡集群中。
 
-## 版本更新 2020-03-13
+### 版本更新 2020-03-13
 * 修复在大并发攻击下采样线程自动挂掉的问题
 * 增加独立采样进程，并发采样速度提升50倍
 * 优化采样的系统效率，降低CPU使用率
 * 集成用于grafana图形显示的http接口
 
-## 部署架构
+### 部署架构
 <img src='https://raw.githubusercontent.com/ywjt/Scout/master/doc/7CE72B62-09B9-427C-9CD3-9E09CCACAF8A.png'> 
 PS: 不建议Scout与后端服务（源机）部署在同一台机上，最优的方式是把Scout独立成节点，部署到源机上层的负载均衡集群上，在上层进行截拦。
 
-## 运行环境：
+### 运行环境：
 * 支持 Centos6.x、Centos7.x
 * 支持 Ubuntu14.04、Ubuntu16.04
 * 使用root特权运行
@@ -20,13 +20,13 @@ PS: 不建议Scout与后端服务（源机）部署在同一台机上，最优�
 
 <img src='https://github.com/ywjt/Scout/blob/master/doc/2384F272-01BD-4081-BD0C-2993592A5C94.png'>
 
-## 配置文件有两种：  
+### 配置文件有两种：  
 
 * 启动配置 /etc/scout.d/scoutd.conf  
 * 策略配置（支持yaml、json格式），语法不能有错，暂时没有做过多的语法校验。/etc/scout.d/rules/
 
 
-## 安装Scout
+### 安装Scout
 
 1）解压到指定目录  
 * Centos6.x:  
@@ -116,7 +116,7 @@ Usage: Scoutd
 ```
 
 
-## 全局配置说明
+### 全局配置说明
 ```shell
 #日志输出等级,选项：DEBUG，INFO，WARNING，ERROR，CRITICAL
 log_level = "INFO"
@@ -161,7 +161,7 @@ storage_size = 1
 ```
 
 
-## 策略配置说明
+### 策略配置说明
 
 **Bolt Fields**  
 <table>
@@ -243,7 +243,7 @@ notice:
    
 
 
-## 安装 Scout web
+### 安装 Scout web
 scout已集成了用于grafana展示的api接口，你只需要安装 grafana server 再导入json模板即可。
 
 **安装 grafana server 6.4.4**
@@ -301,7 +301,7 @@ Scout_plugin_for_grafana_server.json
  
   
    
-## 模拟测试
+### 模拟测试
 下面使用hping3 工具发起攻击测试，工具自行安装。hping3是一个很全面的网络压测工具。  
 
 **发起80端口syn半连接请求**
