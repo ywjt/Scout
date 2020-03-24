@@ -67,13 +67,13 @@ Scoutd init
 ```
 
 这一步在新安装时要做，还有如果全局配置文件里改变了storage_type缓存类型，也需要重新初始化。重新初始化会清除缓存数据。  
-修改/etc/scout.d/scoutd.conf 中：
+修改 /etc/scout.d/scoutd.conf 中：
 ```
 listen_ip =""
 motr_interface =""
 motr_port = ""
 ```
-然后可以启动了。
+修改 /etc/scout.d/rules/下tcp.yaml、udp.yaml文件中的trustIps字段为你的对应本机IP，然后可以启动了。
 
 4）启动Scout  
 ```shell
