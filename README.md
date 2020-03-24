@@ -11,6 +11,9 @@ Scout是一个攻击检测工具，它在受到如CC、压测工具、syn flood�
 * 优化采样的系统效率，降低CPU使用率
 * 集成用于grafana图形显示的http接口
 
+## 部署架构
+<img src='https://raw.githubusercontent.com/ywjt/Scout/master/doc/7CE72B62-09B9-427C-9CD3-9E09CCACAF8A.png>
+
 ## 运行环境：
 * 支持 Centos6.x、Centos7.x
 * 支持 Ubuntu14.04、Ubuntu16.04
