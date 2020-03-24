@@ -159,6 +159,12 @@ storage_type = 'Memory'
 # 限制内存使用大小，最小1G
 # 不配置默认为可用系统内存的一半，配置不能有小数点
 storage_size = 1
+
+# 接口服务参数
+# http_host: 主机地址，默认 'localhost'
+# http_port: 绑定端口，默认 6667
+http_host = 'localhost'
+http_port = 6667
 ```
 
 
