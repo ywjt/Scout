@@ -71,7 +71,14 @@ listen_ip =""
 motr_interface =""
 motr_port = ""
 ```
-修改 /etc/scout.d/rules/下tcp.yaml、udp.yaml文件中的trustIps字段为你的对应本机IP，然后可以启动了。
+修改 /etc/scout.d/rules/下tcp.yaml、udp.yaml文件中的trustIps字段为你的对应本机IP，
+```
+trustIps:
+      - 127.0.0.1
+      - 10.10.0.4
+      - 114.114.114.114
+```
+然后可以启动了。
 
 4）启动Scout  
 ```shell
