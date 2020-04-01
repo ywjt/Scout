@@ -33,19 +33,19 @@ PS: 不建议Scout与后端服务（源机）部署在同一台机上，最优�
 * Centos6.x:  
 ```shell
 wget https://github.com/ywjt/Scout/releases/download/v0.3.0-beta-Centos6/scout_v0.3.0-beta-Centos6.tar.gz  
-tar zxvf Scout_v0.1.0-alpha.tar.gz -C /usr/local/  
+tar zxvf scout_v0.3.0-beta-Centos6.tar.gz -C /usr/local/  
 ```
 
 * Centos7.x:  
 ```shell
 wget https://github.com/ywjt/Scout/releases/download/v0.3.0-beta-Centos7/scout_v0.3.0-beta-Centos7.tar.gz  
-tar zxvf Scout_v0.1.0-alpha.tar.gz -C /usr/local/  
+tar zxvf scout_v0.3.0-beta-Centos7.tar.gz -C /usr/local/  
 ```
 
 * Ubuntu14.04\16.04:  
 ```shell
 wget https://github.com/ywjt/Scout/releases/download/v0.3.0-beta-Ubuntu/scout_v0.3.0-beta-Ubuntu.tar.gz   
-tar zxvf Scout_v0.1.0-alpha_ubuntu.tar.gz -C /usr/local/  
+tar zxvf scout_v0.3.0-beta-Ubuntu.tar.gz -C /usr/local/  
 ```
 
 2）设置软连接
