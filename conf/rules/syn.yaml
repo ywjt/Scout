@@ -5,7 +5,7 @@ ctime: "Thu Oct 24 17:48:11 CST 2019"
 bolt: "TCP"
 
 filter:
-    timeDelta: 10
+    timeDelta: 3
     trustIps: ""
     motrPort: ""
     motrProto: "TCP"
