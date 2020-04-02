@@ -78,7 +78,20 @@ trustIps:
       - 10.10.0.4
       - 114.114.114.114
 ```
-然后可以启动了。
+
+关于QPS：
+一般来说，每秒有单IP短连接数超过100，我们可以认为是异常连接，也即100QPS。公式（QPS=noOfConnections/timeDelta）策略文件可以配置以下方式：
+
+```
+timeDelta: 1
+noOfConnections: 100
+```
+或者
+```timeDelta: 3
+noOfConnections: 300
+```
+因为攻击连接是一个爬升的过程，第二个写法对异常连接有比较低的宽容度，即较敏感。如果QPS设定比较高，建议用第二个写法。
+
 
 4）启动Scout  
 ```shell
