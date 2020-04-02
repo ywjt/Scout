@@ -225,7 +225,7 @@ bolt: "TCP"
 # 返回：{u'total': 121, u'_id': u'115.115.115.115'}
 #
 filter:
-    timeDelta: 1           #时间区间, Seconds.
+    timeDelta: 1           #时间区间, Seconds. QPS = noOfConnections / timeDelta
     trustIps:               #排除src白名单,列表
       - 127.0.0.1
       - 10.10.0.4
