@@ -36,7 +36,7 @@ wget https://github.com/ywjt/Scout/releases/download/v0.3.0-beta-Centos6/scout_v
 tar zxvf scout_v0.3.0-beta-Centos6.tar.gz -C /usr/local/  
 ```
 
-* Centos7.x:  
+* Centos7.x\8.x:  
 ```shell
 wget https://github.com/ywjt/Scout/releases/download/v0.3.0-beta-Centos7/scout_v0.3.0-beta-Centos7.tar.gz  
 tar zxvf scout_v0.3.0-beta-Centos7.tar.gz -C /usr/local/  
@@ -54,7 +54,7 @@ ln -s /usr/local/scout/conf /etc/scout.d
 ln -s /usr/local/scout/bin/* /usr/local/bin/  
 ```
 
-如果是 Centos7:
+如果是 Centos7\8:
 ```shell
 ln -s /usr/lib64/libsasl2.so.3.0.0 /usr/lib64/libsasl2.so.2  
 ```
