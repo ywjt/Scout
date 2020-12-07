@@ -16,7 +16,7 @@ Scout是一个攻击检测工具，能有效识别如CC、压测工具发起的�
 PS: 不建议Scout与后端服务（源机）部署在同一台机上，最优的方式是把Scout独立成节点，部署到源机上层的负载均衡集群上，在上层进行截拦。
 
 ### 运行环境：
-* 支持 Centos6.x/7.x、Ubuntu14.04/16.04
+* 支持 Centos6.x/7.x/8.x、Ubuntu14.04/16.04
 * 使用root特权运行
 * 注意下载对应的版本 
 <img src='https://github.com/ywjt/Scout/blob/master/doc/2384F272-01BD-4081-BD0C-2993592A5C94.png'>
